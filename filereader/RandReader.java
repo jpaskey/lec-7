@@ -19,10 +19,18 @@ public class RandReader {
 			String line = in.readLine();
 			while (line != null) {
 				// TODO: add line to list
+				allLines.add(line);
 
 				line = in.readLine();
 			}
 			// TODO: print out a random line from the list. 
+			int randomLine = ((int)(Math.random() * allLines.size()));
+			
+			while((allLines.get(randomLine)).isEmpty()) {
+				randomLine = ((int)(Math.random() * allLines.size()));
+			}
+			
+			System.out.println(allLines.get(randomLine));
 
 			
 		} catch (Exception e) {
